@@ -17,7 +17,7 @@ $admin = get_admin("super");
 <!-- } 전체 콘텐츠 끝 -->
 
 <!-- 하단 시작 { -->
-<div id="ft" class="border-t-4 border-primary py-8 px-4 mx-8">
+<div id="footer" class="border-t-4 border-primary py-8 px-4 mx-8">
     <div class="grid grid-cols-1 md:grid-cols-[430px_1fr] gap-4 items-center text-sm text-primary">
         <div class="grid grid-cols-1 xs:grid-cols-[150px_1fr] gap-4 items-center">
             <div class="flex flex-col justify-center items-center xs:flex-none xs:items-start">

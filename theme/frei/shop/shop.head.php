@@ -33,9 +33,12 @@ include_once(G5_LIB_PATH . '/latest.lib.php');
     </div>
 
     <div class="hidden md:flex items-center">
+        <?php if ($is_admin) {  ?>
+            <div class="mr-4"><a href="<?php echo correct_goto_url(G5_ADMIN_URL); ?>">admin</a></div>
+        <?php }  ?>
         <?php if (!$is_member) { ?>
-            <div class="login mr-4"><a href="<?php echo G5_BBS_URL ?>/login.php?url=<?php echo $urlencode; ?>">login</a></div>
-            <div class="login mr-4"><a href="<?php echo G5_BBS_URL ?>/register.php">join</a></div>
+            <div class="mr-4"><a href="<?php echo G5_BBS_URL ?>/login.php?url=<?php echo $urlencode; ?>">login</a></div>
+            <div class="mr-4"><a href="<?php echo G5_BBS_URL ?>/register.php">join</a></div>
         <?php }  ?>
         <?php
         if ($is_member) {
@@ -56,35 +59,39 @@ include_once(G5_LIB_PATH . '/latest.lib.php');
     <div class="grid grid-cols-1 md:grid-cols-2 items-end gap-4">
         <div class="w-fit">
             <div class="border-b-2 border-primary py-3">
-                <h1 class="text-4xl md:text-6xl">frei roasters</h1>
+                <a href="/" class="block text-4xl md:text-6xl">frei roasters</a>
             </div>
             <div class="border-b-2 border-primary py-3 px-5">
-                <h1 class="text-3xl md:text-4xl">we're</h1>
+                <a href="/" class="block text-3xl md:text-4xl">we're</a>
             </div>
             <div class="border-b-2 border-primary py-3 px-5">
-                <h1 class="text-3xl md:text-4xl">shop</h1>
+                <a href="/shop/list.php?ca_id=10" class="block text-3xl md:text-4xl">shop</a>
             </div>
             <div class="border-b-2 border-primary py-3 px-5">
-                <h1 class="text-3xl md:text-4xl">wholesale</h1>
+                <a href="/shop/list.php?ca_id=20" class="block text-3xl md:text-4xl">wholesale</a>
             </div>
             <div class="border-b-2 border-primary py-3 px-5">
-                <h1 class="text-3xl md:text-4xl">1f</h1>
+                <a href="/shop/list.php?ca_id=1010" class="block text-3xl md:text-4xl">1f</a>
             </div>
             <div class="border-b-2 border-primary py-3 px-5">
-                <h1 class="text-3xl md:text-4xl">2f</h1>
+                <a href="/shop/list.php?ca_id=1020" class="block text-3xl md:text-4xl">2f</a>
             </div>
             <div class="border-b-2 border-primary py-3 px-5">
-                <h1 class="text-3xl md:text-4xl">3f</h1>
+                <a href="/shop/list.php?ca_id=1030" class="block text-3xl md:text-4xl">3f</a>
             </div>
             <div class="border-b-2 border-primary py-3 px-5">
-                <h1 class="text-3xl md:text-4xl">4f</h1>
+                <a href="/shop/list.php?ca_id=1040" class="block text-3xl md:text-4xl">4f</a>
             </div>
         </div>
 
         <div class="h-full flex flex-col justify-end items-end">
             <div class="flex text-2xl items-center">
+                <?php if ($is_admin) {  ?>
+                    <div class="mr-4"><a href="<?php echo correct_goto_url(G5_ADMIN_URL); ?>">admin</a></div>
+                <?php }  ?>
                 <?php if (!$is_member) { ?>
-                    <div class="login"><a href="<?php echo G5_BBS_URL ?>/login.php?url=<?php echo $urlencode; ?>">login</a></div>
+                    <div class="mr-4"><a href="<?php echo G5_BBS_URL ?>/login.php?url=<?php echo $urlencode; ?>">login</a></div>
+                    <div class="mr-4"><a href="<?php echo G5_BBS_URL ?>/register.php">join</a></div>
                 <?php }  ?>
                 <?php
                 if ($is_member) {
@@ -182,7 +189,7 @@ if (defined('G5_IS_COMMUNITY_PAGE') && G5_IS_COMMUNITY_PAGE) {
 <!-- 전체 콘텐츠 시작 { -->
 <div id="wrapper" class="px-8">
     <!-- #container 시작 { -->
-    <div id="container">
+    <div id="container" class="relative">
         <!-- .shop-content 시작 { -->
         <div>
             <!-- <?php if ((!$bo_table || $w == 's') && !defined('_INDEX_')) { ?><div id="wrapper_title"><?php echo $g5['title'] ?></div><?php } ?> -->

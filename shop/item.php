@@ -256,22 +256,20 @@ include_once(G5_SHOP_PATH . '/settle_naverpay.inc.php');
     <script src="<?php echo G5_JS_URL; ?>/shop.js"></script>
 <?php } ?>
 
-<div class="relative">
+<?php
+// 상품 구입폼
+include_once($skin_dir . '/item.form.skin.php');
+?>
 
-    <?php
-    // 상품 구입폼
-    include_once($skin_dir . '/item.form.skin.php');
-    ?>
+<?php
+// 상품 상세정보
+$info_skin = $skin_dir . '/item.info.skin.php';
+if (!is_file($info_skin))
+    $info_skin = G5_SHOP_SKIN_PATH . '/item.info.skin.php';
+include $info_skin;
+?>
 
-    <?php
-    // 상품 상세정보
-    $info_skin = $skin_dir . '/item.info.skin.php';
-    if (!is_file($info_skin))
-        $info_skin = G5_SHOP_SKIN_PATH . '/item.info.skin.php';
-    include $info_skin;
-    ?>
-
-</div>
+<div class="h-[220px] md:h-[0px]"></div>
 
 <?php
 // 하단 HTML

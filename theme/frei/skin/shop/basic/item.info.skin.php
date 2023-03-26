@@ -7,7 +7,7 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_SHOP_CSS_URL . '/style.css">
 
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
 
-<section class="grid grid-cols-2 gap-4">
+<section class="grid grid-cols-1 md:grid-cols-[1fr_400px] gap-4">
 	<div>
 		<!-- <ul class="tab_tit">
 			<li><button type="button" id="btn_sit_inf" rel="#sit_inf" class="selected">상품정보</button></li>

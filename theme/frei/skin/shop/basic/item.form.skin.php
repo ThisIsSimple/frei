@@ -4,15 +4,15 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="' . G5_SHOP_CSS_URL . '/style.css">', 0);
 ?>
-<div id="frei-item-form" class="fixed bottom-0 left-0 right-0 z-30 w-full bg-transparent px-8">
+<div id="frei-item-form" class="fixed bottom-0 left-0 right-0 z-30 w-full px-8 bg-transparent border-t md:border-none">
 	<form name="fitem" method="post" action="<?php echo $action_url; ?>" onsubmit="return fitem_submit(this);">
 		<input type="hidden" name="it_id[]" value="<?php echo $it_id; ?>">
 		<input type="hidden" name="sw_direct">
 		<input type="hidden" name="url">
-
-		<div class="grid grid-cols-2 gap-4">
+		
+		<div class="block md:grid md:grid-cols-[1fr_400px] gap-4">
 			<!-- 상품 요약정보 및 구매 시작 { -->
-			<section class="2017_renewal_itemform col-start-2 col-end-2 text-primary p-3">
+			<section class="2017_renewal_itemform col-start-2 col-end-2 text-primary bg-white p-3">
 				<h2 id="sit_title" class="font-righteous"><?php echo stripslashes($it['it_name']); ?></h2>
 				<!-- <p id="sit_desc"><?php echo $it['it_basic']; ?></p> -->
 				<!-- <?php if ($is_orderable) { ?>
@@ -211,7 +211,7 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_SHOP_CSS_URL . '/style.css">
 	// 스크롤에 따라서 옵션 선택 추척 변경
 	$(function() {
 		const handleScroll = () => {
-			if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 150) {
+			if (window.innerHeight + window.scrollY >= document.body.offsetHeight - $('#footer').outerHeight()) {
 				$('#frei-item-form').removeClass("fixed px-8")
 				$('#frei-item-form').addClass("absolute")
 			} else {
